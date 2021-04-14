@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   let passengerFirstName = ride.passengerDetails.first
   let passengerLastName = ride.passengerDetails.last
   let passengerPhoneNum = ride.passengerDetails.phoneNumber
+  let partySize = ride.numberOfPassengers
 
   // Record the pickup and drop-off location
   let pickUp = `${ride.pickupLocation.address},${ride.pickupLocation.city},${ride.pickupLocation.state} ${ride.pickupLocation.zip}` 
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   if (ride.purpleRequested == true) {
         levelOfService = `Noober Purple Passenger`
-    } else if (ride.numberOfPassengers > 3) {
+    } else if (partySize > 3) {
         levelOfService = `Noober XL Passenger`
     } else {
         levelOfService = `Noober X Passenger`
